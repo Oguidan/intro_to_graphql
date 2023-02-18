@@ -16,5 +16,9 @@
   "bugs": {
     "url": "https://github.com/Oguidan/intro_to_graphql/issues"
   },
-  "homepage": "https://github.com/Oguidan/intro_to_graphql#readme"
+  "homepage": "https://github.com/Oguidan/intro_to_graphql#readme",
+  "dependencies": {
+    "apollo-server": "^3.11.1",
+    "graphql": "^16.6.0"
+  }
 }
