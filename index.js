@@ -1,7 +1,7 @@
 // Import ApolloServer and glq libraries from the apollo-server module
 const {ApolloServer, gql} = require("apollo-server");
 
-// Create movie array, where each movie will have a "mobieTitle" and "dateOfRelease"
+// Create movie array, where each movie will have a "movieTitle" and "dateOfRelease"
 const movies = [
     {
         movieTitle: "Avenger - EndGame",
@@ -26,7 +26,7 @@ type Mutation{
 `;
 
 // Create resolver functions
-const resolver = {
+const resolvers = {
     Query: {
         queryMovie: () => movies,
     },
@@ -38,3 +38,13 @@ const resolver = {
         },
     },
 };
+
+// Initialize GraphQL server
+const server = new ApolloServer({
+    typeDefs,
+    resolvers,
+});
+
+server
+    .listen({port: 8080})
+    .then(({url}) => console.log(`GraphQL server running at ${url}`));
